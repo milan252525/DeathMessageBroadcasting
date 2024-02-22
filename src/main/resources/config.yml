@@ -1,0 +1,11 @@
+# worlds:
+#  world: global
+#  world_nether: local
+
+# Possible values are:
+#   global - Death messages from this world are visible globally
+#   local - Only in the same world
+#   disable - Death messages are disabled in this world
+
+worlds:
+  world: global

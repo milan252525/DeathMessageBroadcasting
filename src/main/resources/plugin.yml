@@ -1,0 +1,6 @@
+name: DeathMessageBroadcasting
+version: '${project.version}'
+main: com.milan25.deathmessagebroadcasting.DeathMessageBroadcasting
+api-version: '1.20'
+authors: [milan_25]
+description: Configure broadcasting of death messages per world. They can be disabled, broadcast locally or globally.
