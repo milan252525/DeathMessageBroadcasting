@@ -19,14 +19,14 @@ public class DMBEvents implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void OnTest(PlayerDeathEvent event) {
         World world = event.getEntity().getWorld();
-        String worldName = event.getEntity().getWorld().getName();
+        String worldName = world.getName();
         String deathMessage = event.getDeathMessage();
+
+        String worldSetting = plugin.getConfig().getString("worlds." + worldName, "global");
 
         if (deathMessage == null) {
             return;
         }
-
-        String worldSetting = plugin.getConfig().getString("world." + worldName, null);
 
         switch (worldSetting) {
             case "local":
@@ -38,7 +38,6 @@ public class DMBEvents implements Listener {
             case "disabled":
                 event.setDeathMessage(null);
                 break;
-            case null:
             default:
             case "global":
                 Bukkit.broadcastMessage(deathMessage);
